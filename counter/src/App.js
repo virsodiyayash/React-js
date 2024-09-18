@@ -2,13 +2,24 @@ import {useState} from 'react';
 import './App.css';
 
 function App() {
-  let [counter , setCounter]= useState(5);
+  const [counter , setCounter]= useState(5);
   // let counter = 5;
 
   const addValue = () => {
     if(counter < 20 ){
-      counter = counter + 1;
-      setCounter(counter);
+
+      //This function increase the value by only one and in this method all the counter variable is same;
+      //That's why when you click increase method then answer when click the button value increase by only one;
+      // setCounter(counter + 1);
+      // setCounter(counter + 1);
+      // setCounter(counter + 1);
+      // setCounter(counter + 1);
+
+      //In this method with callback function the click of one butto increase the value by 4;
+      setCounter((prevCounter) => prevCounter + 1);
+      setCounter((prevCounter) => prevCounter + 1);
+      setCounter((prevCounter) => prevCounter + 1);
+      setCounter((prevCounter) => prevCounter + 1);
     }
     console.log(counter);
     
@@ -16,8 +27,7 @@ function App() {
 
   const decValue = () => {
     if(counter > 0 ){
-      counter = counter - 1;
-      setCounter(counter);
+      setCounter(counter - 1);
     }
     console.log(counter);
   }
