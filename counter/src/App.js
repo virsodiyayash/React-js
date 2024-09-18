@@ -29,7 +29,7 @@ function App() {
     <h2 className='heading2'>Counter value : {counter}</h2>
 
     <button className='increase' onClick={addValue}>Increase value (+)</button>
-    <button className='decrease' onClick={decValue}>Decease value (+)</button>
+    <button className='decrease' onClick={decValue}>Decease value (-)</button>
 
    </>
   );
