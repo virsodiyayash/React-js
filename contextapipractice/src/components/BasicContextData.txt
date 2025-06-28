@@ -1,0 +1,30 @@
+import React from 'react'
+import { Data , Data1 } from '../App'
+import { useContext } from "react"
+
+const ComponentC = () => {
+
+  const userName = useContext(Data)
+  const age = useContext(Data1)
+
+  return (
+    <Data.Consumer>
+        {(name) => {
+            return (
+              <Data1.Consumer>
+                {(age) => {
+                  return (
+                    <section>
+                      <h1>{name}</h1>
+                      <p>{age}</p>
+                    </section>
+                )
+                }}
+              </Data1.Consumer>
+            )
+        }}
+    </Data.Consumer>
+  )
+}
+
+export default ComponentC

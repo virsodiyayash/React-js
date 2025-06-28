@@ -1,0 +1,39 @@
+---------------------------App--------------------------------
+
+import { createContext } from "react"
+
+import ComponentA from "./components/ComponentA"
+import ComponentC from "./components/ComponentC"
+
+export const Data = createContext()
+
+function App() {
+
+  const name = "Yash"
+
+  return <div>
+    <Data.Provider value={name}>
+      <ComponentA />
+    </Data.Provider>
+  </div>
+}
+
+export default App
+
+
+------------------------------ComponentC------------------------------
+
+import React from 'react'
+import { Data } from '../App'
+
+const ComponentC = () => {
+  return (
+    <Data.Consumer>
+        {(name) => {
+            return <h1>{name}</h1>
+        }}
+    </Data.Consumer>
+  )
+}
+
+export default ComponentC
